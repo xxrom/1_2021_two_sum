@@ -2,19 +2,17 @@ from typing import List
 
 class Solution:
   def twoSum(self, nums: List[int], target: int) -> List[int]:
-    ans = None
-
     seen = {}
 
     for index, num in enumerate(nums):
-      find = target - num
+      remaining = target - num
 
-      if find in seen:
-        ans = [seen[find], index]
+      if remaining in seen:
+        return [seen[remaining], index]
 
       seen[num] = index
 
-    return ans
+    return None
 
 
 my = Solution()
